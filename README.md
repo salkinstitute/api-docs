@@ -29,6 +29,7 @@ And the response will look like
 ```javascript
 { status: "success", data: {authToken: "f2KpRW7KeN9aPmjSZ", userId: fbdpsNf4oHiX79vMJ} }
 ```
+If using another client be sure to specify the correct header (POST) and the content type `application/x-www-form-urlencoded` when logging in.
 
 You'll need to save the `userId` and `token` on the client, for subsequent authenticated requests.
 
