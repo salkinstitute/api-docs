@@ -34,8 +34,8 @@ You'll need to save the `userId` and `token` on the client, for subsequent authe
 
 #### Making Authenticated Calls
 
-For any endpoints that require the default authentication, you must include the `userId` and
-`authToken` with each request under the following headers:
+All endpoints require authentication, you must include the `userId` and
+`authToken` (received from logging in above) with each request under the following headers:
 - X-User-Id
 - X-Auth-Token
 
