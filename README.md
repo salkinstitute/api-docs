@@ -5,12 +5,14 @@
   - [Logging In](#logging-in)
   - [Making Authenticated Calls](#making-authenticated-calls)
 - [GET](#get)
-  - [People](#people)
+  -  [People](#people)
       - [All Active People](#all-active-people)    
    - [Departments](#departments)
       - [All Active Departments](#all-active-departments)
    - [Funds](#funds)
       - [All Valid Funds](#all-valid-funds)
+   - [Orgs](#orgs)
+      - [All Orgs](#all-orgs)
 
 ### Getting Started
 
@@ -68,4 +70,12 @@ curl -H "X-Auth-Token: f2KpRW7KeN9aPmjSZ" -H "X-User-Id: fbdpsNf4oHiX79vMJ" http
 
 ```bash
 curl -H "X-Auth-Token: f2KpRW7KeN9aPmjSZ" -H "X-User-Id: fbdpsNf4oHiX79vMJ" https://BASE_URL/api/funds/all-valid-short
+```
+
+#### Orgs
+
+##### All Orgs
+
+```bash
+curl -H "X-Auth-Token: f2KpRW7KeN9aPmjSZ" -H "X-User-Id: fbdpsNf4oHiX79vMJ" https://BASE_URL/api/orgs
 ```
