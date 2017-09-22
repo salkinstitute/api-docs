@@ -189,7 +189,10 @@ Arguments:
 		charge_start_time: '17:00',
 		//number
 		//Optional, '17' not used in any calculation - more for a reporting aspect.
-		charge_quantity: '17'
+		charge_quantity: '17',
+		//varchar(40)
+		//Optional, '11-0032' reference to work done on/for Iacuc protocol.
+		protocol_number: Match.Maybe(String)
 
 	},
 	{...}
