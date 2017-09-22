@@ -1,0 +1,41 @@
+
+[{
+	"recharge_period":"June 2017",
+	"recharge_center":"BHPO",
+	"associated_request" : "PPMS3-BPHO-20170701 REF#74346",
+	"fund_code" : "011074",
+	"charge_description" : "Airyscan 880-1",
+	"dept_code" : "UCSD-MURRE, CORNELIS",
+	"org" : "UCSD"
+	"charge_amount" : "64.65",
+	"base_amount" : "50.00",
+	"sales_tax_rate": "7.75",
+	"sales_tax_amount":"4.65"
+	"charge_minutes" : "60",
+	"charge_start_time" : "17:00",
+	"idc_rate": "20.00",
+	"idc_amount":"10.00"
+},
+{
+	"recharge_period":"June 2017",
+	"recharge_center":"BPHO",
+	"associated_request" : "PPMS3-BPHO-20170701 REF#74757",
+	"fund_code" : "626075",
+	"po_number":"90709501",
+	"requestor_name" : "Bob Villa",
+	"charge_date" : "2017/06/22",
+	"charge_description" : "Falcon 352235 Filter Cap Tubes",
+	"charge_amount" : "177.79",
+	"base_amount" : "50.00",
+	"shipping_amount":"5.00",
+	"sales_tax_rate": "7.75",
+	"sales_tax_amount":"12.79"
+	"charge_quantity" : "60",
+	"dept_code" : "PFIZER-GRACHECK",
+	"org" : "PFIZER",
+	"for_profit":true,
+	"idc_rate": "20.00",
+	"idc_amount":"10.00",
+	"ubi_rate": "200.00",
+	"ubi_amount":"100.00",
+}]
