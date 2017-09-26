@@ -1,5 +1,6 @@
 [{
 	"recharge_period":"December 2017",
+	"recharge_type":"Services",
 	"recharge_center":"FCCF",
 	"associated_request" : "PPMS3-FCCF-20170701 REF#74346",
 	"fund_code" : "626075",
@@ -15,6 +16,7 @@
 },
 {
 	"recharge_period":"December 2017",
+	"recharge_type":"Services",
 	"recharge_center":"FCCF",
 	"associated_request" : "PPMS3-FCCF-20170701 REF#74757",
 	"fund_code" : "626075",
@@ -30,6 +32,7 @@
 },
 {
 	"recharge_period":"December 2017",
+	"recharge_type":"Services",
 	"recharge_center":"FCCF",
 	"associated_request" : "PPMS3-FCCF-20170701 REF#74589",
 	"fund_code" : "626075",
@@ -45,6 +48,7 @@
 },
 {
 	"recharge_period":"December 2017",
+	"recharge_type":"Products",
 	"recharge_center":"FCCF",
 	"associated_request" : "PPMS3-FCCF-20170701 REF#68",
 	"fund_code" : "216816",
