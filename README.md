@@ -215,7 +215,7 @@ Arguments:
 		charge_quantity: '17',
 		//varchar(40)
 		//Optional, '11-0032' reference to work done on/for Iacuc protocol.
-		protocol_number: Match.Maybe(String)
+		protocol_number: '11-0032' 
 
 	},
 	{...}
