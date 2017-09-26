@@ -13,6 +13,8 @@
       - [All Valid Funds](#all-valid-funds)
    - [Orgs](#orgs)
       - [All Orgs](#all-orgs)
+   - [Tax](#tax)
+   	-[Current Tax Rate](#current-tax-rate)
  - [POST](#post)
     - [Recharges](#recharges)
       - [Insert Recharge Items and Post to Accounting](#insert-recharge-items-and-post-to-accounting)   
@@ -28,7 +30,7 @@ The notation `BASE_URL` shoud be either `saw.salk.edu` or `saw-test.salk.edu`
 A login will look something like
 
 ```bash
-curl https://BASE_URL/api/login/ -d "username=test&password=password"
+curl https://BASE_URL/api/v2/login/ -d "username=test&password=password"
 ```
 And the response will look like
 ```javascript
@@ -46,7 +48,7 @@ All endpoints require authentication, you must include the `userId` and
 - X-Auth-Token
 
 ```bash
-curl -H "X-Auth-Token: f2KpRW7KeN9aPmjSZ" -H "X-User-Id: fbdpsNf4oHiX79vMJ" https://BASE_URL/api/people/active
+curl -H "X-Auth-Token: f2KpRW7KeN9aPmjSZ" -H "X-User-Id: fbdpsNf4oHiX79vMJ" https://BASE_URL/api/v2/people/active
 ```
 
 ### GET
@@ -55,38 +57,58 @@ curl -H "X-Auth-Token: f2KpRW7KeN9aPmjSZ" -H "X-User-Id: fbdpsNf4oHiX79vMJ" http
 
 ##### All Active People
 
+Endpoint: https://BASE_URL/api/v2/people/active
+
 ```bash
-curl -H "X-Auth-Token: f2KpRW7KeN9aPmjSZ" -H "X-User-Id: fbdpsNf4oHiX79vMJ" https://BASE_URL/api/people/active
+curl -H "X-Auth-Token: f2KpRW7KeN9aPmjSZ" -H "X-User-Id: fbdpsNf4oHiX79vMJ" https://BASE_URL/api/v2/people/active
 ```
 
 #### Departments
 
 ##### All Active Departments
 
+Endpoint: https://BASE_URL/api/v2/departments/active
+
 ```bash
-curl -H "X-Auth-Token: f2KpRW7KeN9aPmjSZ" -H "X-User-Id: fbdpsNf4oHiX79vMJ" https://BASE_URL/api/departments/active
+curl -H "X-Auth-Token: f2KpRW7KeN9aPmjSZ" -H "X-User-Id: fbdpsNf4oHiX79vMJ" https://BASE_URL/api/v2/departments/active
 ```
 
 #### Funds
 
 ##### All Valid Funds
 
+Endpoint: https://BASE_URL/api/v2/funds/all-valid-short
+
 ```bash
-curl -H "X-Auth-Token: f2KpRW7KeN9aPmjSZ" -H "X-User-Id: fbdpsNf4oHiX79vMJ" https://BASE_URL/api/funds/all-valid-short
+curl -H "X-Auth-Token: f2KpRW7KeN9aPmjSZ" -H "X-User-Id: fbdpsNf4oHiX79vMJ" https://BASE_URL/api/v2/funds/all-valid-short
 ```
 
 #### Orgs
 
 ##### All Orgs
 
+Endpoint:  https://BASE_URL/api/v2/orgs
+
 ```bash
-curl -H "X-Auth-Token: f2KpRW7KeN9aPmjSZ" -H "X-User-Id: fbdpsNf4oHiX79vMJ" https://BASE_URL/api/orgs
+curl -H "X-Auth-Token: f2KpRW7KeN9aPmjSZ" -H "X-User-Id: fbdpsNf4oHiX79vMJ" https://BASE_URL/api/v2/orgs
 ```
+#### Tax
+
+##### Current Tax Rate
+
+Endpoint:  https://BASE_URL/api/v2/current-tax-rate
+
+```bash
+curl -H "X-Auth-Token: f2KpRW7KeN9aPmjSZ" -H "X-User-Id: fbdpsNf4oHiX79vMJ" https://BASE_URL/api/v2/current-tax-rate
+```
+
 ### POST
 
 #### Recharges
 
 ##### Insert Recharge Items and Post to Accounting
+
+Endpoint:  https://BASE_URL/api/v2/recharges/insert-recharge-items-and-post
 
 Use this method to post recharge items for a single recharge center and recharge period, i.e. 'FCCF' 'June 2017'.
 
@@ -106,7 +128,7 @@ Arguments:
 		recharge_center: 'BPHO',
 		//varchar(100)
 		//Optional, 'Services','Products','Controlled Substances'
-		recharge_type: 'Services',
+		recharge_type: 'Products',
 		//varchar(20)
 		//Optional, for external users. Their PO Number with Salk. '90709501'
 		po_number: '90709501',
@@ -116,57 +138,58 @@ Arguments:
 		associated_request: 'PPMS3-FCCF-20170701 REF#74346',
 		//varchar(20)
 		//'626075'
-		//Valid fund_code, reference https://github.com/salkinstitute/api-docs#all-valid-funds
+		//Valid fund_code, reference https://github.com/salkinstitute/api/v2-docs#all-valid-funds
 		fund_code: '626075',
 		//varchar(20)
 		//'GEL-B'
-		//Valid dept_code, reference https://github.com/salkinstitute/api-docs#all-active-departments
+		//Valid dept_code, reference https://github.com/salkinstitute/api/v2-docs#all-active-departments
 		dept_code: 'GEL-B',
 		//varchar(200)
-		//Valid org https://github.com/salkinstitute/api-docs#all-orgs
+		//Valid org https://github.com/salkinstitute/api/v2-docs#all-orgs
 		//For all internal, 'Salk'
 		org: 'Salk',
 		//varchar(200)
 		//'Fred Flintstone','Barney Rubbel','Donald Drumpf'
 		requestor_name: 'Fred Flintstone',
 		//float
-		//total amount before adding any additional taxes, shipping or external-rates.
+		//total amount before adding any additional taxes, shipping or external-rate amounts (ubi,idc).
 		//will be the same as charge_amount for all internal.
 		//'100.00' US Money Style, .00 required.
 		base_amount: '100.00',
 		//float
-		//Optional,'100.00' US Money Style, .00 required.
+		//Optional, US Money Style, .00 required.
 		shipping_amount: '19.22',
 		//float
 		//Optional, UBI (unrelated business income tax) Rate
-		//Default values for dept_code seen in departments/api return
-		//'200.00' Interpreted as a percent to be multiplied by and added to base_rate, .00 required
+		//Default values for dept_code seen in departments/api/v2 return
+		//Interpreted as a percent to be multiplied by and added to base_rate, .00 required
 		ubi_rate: '100.00',
 		//float
 		//Optional, UBI (unrelated business income tax) Amount
-		//'23.00' resulting amount from (ubi_rate % 100) X base_rate, .00 required
+		//Resulting amount from (ubi_rate % 100) X base_rate, .00 required
 		ubi_amount: '100.00',
 		//float
 		//Optional, IDC (indirect cost rate, same as overhead, or markup) Rate
-		//'200.00' Interpreted as a percent to be multiplied by and added to base_rate, .00 required
+		//'Interpreted as a percent to be multiplied by and added to base_rate, .00 required
 		idc_rate: '50.00',
 		//float
 		//Optional, IDC (indirect cost rate, same as overhead, or markup) Amount
-		//'23.00' resulting amount from (idc_rate % 100) X base_rate, .00 required
+		//Resulting amount from (idc_rate % 100) X base_rate, .00 required
 		idc_amount: '50.00',
 		//float
-		//Optional, Sales Tax Rate
-		//'43.00' Interpreted as a percent to be multiplied by and added to base_rate, .00 required
+		//Optional, Sales Tax Rate, pull this value from the api here:
+		// reference https://github.com/salkinstitute/api/v2-docs#current-tax-rate
+		//Interpreted as a percent, .00 required
 		sales_tax_rate: '7.75',
-		//float   269.22
-		//Optional, Sales Tax Amount
-		//'23.00' resulting amount from (sales_tax_rate % 100) X (base_rate + other fees), .00 required
+		//float 
+		//Optional, Sales Tax Amount - ONLY APPLIED TO TANGIBLE GOODS - recharge_type = 'Products'
+		//Resulting amount from (sales_tax_rate % 100) X (base_amount + ubi_amount + idc_amount), .00 required
 		sales_tax_amount: '20.86',
 		//bool
 		//Optional,'true' lookup to org api for_profit value
 		for_profit: true,
 		//varchar(100)
-		//'June 2017' format of the monthly recharge period
+		//Format of the monthly recharge period
 		//Only one value should occur throughout the POST data.
 		recharge_period: 'June 2017',
 		//float
@@ -200,7 +223,7 @@ Arguments:
 ```
 Example:
 ```
-curl -X POST --header "Content-Type:*/*;charset=UTF-8" --data @sample_data/recharges-insert-api-sample.json https://BASE_URL/api/recharges/insert-recharge-items-and-post
+curl -X POST --header "Content-Type:*/*;charset=UTF-8" --data @sample_data/recharges-insert-api-sample.json https://BASE_URL/api/v2/recharges/insert-recharge-items-and-post
 
 ```
 Response:
