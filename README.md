@@ -30,7 +30,7 @@ The notation `BASE_URL` shoud be either `saw.salk.edu` or `saw-test.salk.edu`
 A login will look something like
 
 ```bash
-curl https://BASE_URL/api/v2/login/ -d "username=test&password=password"
+curl https://BASE_URL/api/login/ -d "username=test&password=password"
 ```
 And the response will look like
 ```javascript
@@ -48,7 +48,7 @@ All endpoints require authentication, you must include the `userId` and
 - X-Auth-Token
 
 ```bash
-curl -H "X-Auth-Token: f2KpRW7KeN9aPmjSZ" -H "X-User-Id: fbdpsNf4oHiX79vMJ" https://BASE_URL/api/v2/people/active
+curl -H "X-Auth-Token: f2KpRW7KeN9aPmjSZ" -H "X-User-Id: fbdpsNf4oHiX79vMJ" https://BASE_URL/api/people/active
 ```
 
 ### GET
@@ -57,49 +57,49 @@ curl -H "X-Auth-Token: f2KpRW7KeN9aPmjSZ" -H "X-User-Id: fbdpsNf4oHiX79vMJ" http
 
 ##### All Active People
 
-Endpoint: https://BASE_URL/api/v2/people/active
+Endpoint: https://BASE_URL/api/people/active
 
 ```bash
-curl -H "X-Auth-Token: f2KpRW7KeN9aPmjSZ" -H "X-User-Id: fbdpsNf4oHiX79vMJ" https://BASE_URL/api/v2/people/active
+curl -H "X-Auth-Token: f2KpRW7KeN9aPmjSZ" -H "X-User-Id: fbdpsNf4oHiX79vMJ" https://BASE_URL/api/people/active
 ```
 
 #### Departments
 
 ##### All Active Departments
 
-Endpoint: https://BASE_URL/api/v2/departments/active
+Endpoint: https://BASE_URL/api/departments/active
 
 ```bash
-curl -H "X-Auth-Token: f2KpRW7KeN9aPmjSZ" -H "X-User-Id: fbdpsNf4oHiX79vMJ" https://BASE_URL/api/v2/departments/active
+curl -H "X-Auth-Token: f2KpRW7KeN9aPmjSZ" -H "X-User-Id: fbdpsNf4oHiX79vMJ" https://BASE_URL/api/departments/active
 ```
 
 #### Funds
 
 ##### All Valid Funds
 
-Endpoint: https://BASE_URL/api/v2/funds/all-valid-short
+Endpoint: https://BASE_URL/api/funds/all-valid-short
 
 ```bash
-curl -H "X-Auth-Token: f2KpRW7KeN9aPmjSZ" -H "X-User-Id: fbdpsNf4oHiX79vMJ" https://BASE_URL/api/v2/funds/all-valid-short
+curl -H "X-Auth-Token: f2KpRW7KeN9aPmjSZ" -H "X-User-Id: fbdpsNf4oHiX79vMJ" https://BASE_URL/api/funds/all-valid-short
 ```
 
 #### Orgs
 
 ##### All Orgs
 
-Endpoint:  https://BASE_URL/api/v2/orgs
+Endpoint:  https://BASE_URL/api/orgs
 
 ```bash
-curl -H "X-Auth-Token: f2KpRW7KeN9aPmjSZ" -H "X-User-Id: fbdpsNf4oHiX79vMJ" https://BASE_URL/api/v2/orgs
+curl -H "X-Auth-Token: f2KpRW7KeN9aPmjSZ" -H "X-User-Id: fbdpsNf4oHiX79vMJ" https://BASE_URL/api/orgs
 ```
 #### Tax
 
 ##### Current Tax Rate
 
-Endpoint:  https://BASE_URL/api/v2/current-tax-rate
+Endpoint:  https://BASE_URL/api/current-tax-rate
 
 ```bash
-curl -H "X-Auth-Token: f2KpRW7KeN9aPmjSZ" -H "X-User-Id: fbdpsNf4oHiX79vMJ" https://BASE_URL/api/v2/current-tax-rate
+curl -H "X-Auth-Token: f2KpRW7KeN9aPmjSZ" -H "X-User-Id: fbdpsNf4oHiX79vMJ" https://BASE_URL/api/current-tax-rate
 ```
 
 ### POST
@@ -108,7 +108,7 @@ curl -H "X-Auth-Token: f2KpRW7KeN9aPmjSZ" -H "X-User-Id: fbdpsNf4oHiX79vMJ" http
 
 ##### Insert Recharge Items and Post to Accounting
 
-Endpoint:  https://BASE_URL/api/v2/recharges/insert-recharge-items-and-post
+Endpoint:  https://BASE_URL/api/recharges/insert-recharge-items-and-post
 
 Use this method to post recharge items for a single recharge center and recharge period, i.e. 'FCCF' 'June 2017'.
 
@@ -138,14 +138,14 @@ Arguments:
 		associated_request: 'PPMS3-FCCF-20170701 REF#74346',
 		//varchar(20)
 		//'626075'
-		//Valid fund_code, reference https://github.com/salkinstitute/api/v2-docs#all-valid-funds
+		//Valid fund_code, reference https://github.com/salkinstitute/api-docs#all-valid-funds
 		fund_code: '626075',
 		//varchar(20)
 		//'GEL-B'
-		//Valid dept_code, reference https://github.com/salkinstitute/api/v2-docs#all-active-departments
+		//Valid dept_code, reference https://github.com/salkinstitute/api-docs#all-active-departments
 		dept_code: 'GEL-B',
 		//varchar(200)
-		//Valid org https://github.com/salkinstitute/api/v2-docs#all-orgs
+		//Valid org https://github.com/salkinstitute/api-docs#all-orgs
 		//For all internal, 'Salk'
 		org: 'Salk',
 		//varchar(200)
@@ -161,7 +161,7 @@ Arguments:
 		shipping_amount: '19.22',
 		//float
 		//Optional, UBI (unrelated business income tax) Rate
-		//Default values for dept_code seen in departments/api/v2 return
+		//Default values for dept_code seen in departments/api return
 		//Interpreted as a percent to be multiplied by and added to base_rate, .00 required
 		ubi_rate: '100.00',
 		//float
@@ -178,7 +178,7 @@ Arguments:
 		idc_amount: '50.00',
 		//float
 		//Optional, Sales Tax Rate, pull this value from the api here:
-		// reference https://github.com/salkinstitute/api/v2-docs#current-tax-rate
+		// reference https://github.com/salkinstitute/api-docs#current-tax-rate
 		//Interpreted as a percent, .00 required
 		sales_tax_rate: '7.75',
 		//float 
@@ -223,7 +223,7 @@ Arguments:
 ```
 Example:
 ```
-curl -X POST --header "Content-Type:*/*;charset=UTF-8" --data @sample_data/recharges-insert-api-sample.json https://BASE_URL/api/v2/recharges/insert-recharge-items-and-post
+curl -X POST --header "Content-Type:*/*;charset=UTF-8" --data @sample_data/recharges-insert-api-sample.json https://BASE_URL/api/recharges/insert-recharge-items-and-post
 
 ```
 Response:
