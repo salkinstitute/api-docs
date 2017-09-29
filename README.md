@@ -127,7 +127,7 @@ Arguments:
 		//One of 'FCCF' or 'BPHO' presently. 
 		recharge_center: 'BPHO',
 		//varchar(100)
-		//Optional, 'Services','Products','Controlled Substances'
+		//One of 'Services','Products','Controlled Substances'
 		recharge_type: 'Products',
 		//varchar(20)
 		//Optional, for external users. Their PO Number with Salk. '90709501'
