@@ -12,7 +12,7 @@
    - [Funds](#funds)
       - [All Valid Funds](#all-valid-funds)
    - [Orgs](#orgs)
-      - [All Orgs](#all-orgs)
+      - [All Active Orgs](#all-active-orgs)
    - [Tax](#tax)
    	-[Current Tax Rate](#current-tax-rate)
  - [POST](#post)
@@ -85,12 +85,12 @@ curl -H "X-Auth-Token: f2KpRW7KeN9aPmjSZ" -H "X-User-Id: fbdpsNf4oHiX79vMJ" http
 
 #### Orgs
 
-##### All Orgs
+##### All Active Orgs
 
-Endpoint:  https://BASE_URL/api/orgs
+Endpoint:  https://BASE_URL/api/orgs/active
 
 ```bash
-curl -H "X-Auth-Token: f2KpRW7KeN9aPmjSZ" -H "X-User-Id: fbdpsNf4oHiX79vMJ" https://BASE_URL/api/orgs
+curl -H "X-Auth-Token: f2KpRW7KeN9aPmjSZ" -H "X-User-Id: fbdpsNf4oHiX79vMJ" https://BASE_URL/api/orgs/active
 ```
 #### Tax
 
@@ -99,7 +99,7 @@ curl -H "X-Auth-Token: f2KpRW7KeN9aPmjSZ" -H "X-User-Id: fbdpsNf4oHiX79vMJ" http
 Endpoint:  https://BASE_URL/api/recharges/current-tax-rate
 
 ```bash
-curl -H "X-Auth-Token: f2KpRW7KeN9aPmjSZ" -H "X-User-Id: fbdpsNf4oHiX79vMJ" https://BASE_URL/api/current-tax-rate
+curl -H "X-Auth-Token: f2KpRW7KeN9aPmjSZ" -H "X-User-Id: fbdpsNf4oHiX79vMJ" https://BASE_URL/api/recharges/current-tax-rate
 ```
 
 ### POST
