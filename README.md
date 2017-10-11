@@ -96,7 +96,7 @@ curl -H "X-Auth-Token: f2KpRW7KeN9aPmjSZ" -H "X-User-Id: fbdpsNf4oHiX79vMJ" http
 
 ##### Current Tax Rate
 
-Endpoint:  https://BASE_URL/api/current-tax-rate
+Endpoint:  https://BASE_URL/api/recharges/current-tax-rate
 
 ```bash
 curl -H "X-Auth-Token: f2KpRW7KeN9aPmjSZ" -H "X-User-Id: fbdpsNf4oHiX79vMJ" https://BASE_URL/api/current-tax-rate
