@@ -167,6 +167,7 @@ Arguments:
 		//float
 		//Optional, UBI (unrelated business income tax) Amount
 		//Resulting amount from (ubi_rate % 100) X base_rate, .00 required
+		// (((Base + IDC) + Tax) + Shipping) * (ubi_rate % 100)
 		ubi_amount: '100.00',
 		//float
 		//Optional, IDC (indirect cost rate, same as overhead, or markup) Rate
@@ -183,7 +184,7 @@ Arguments:
 		sales_tax_rate: '7.75',
 		//float 
 		//Optional, Sales Tax Amount - ONLY APPLIED TO TANGIBLE GOODS - recharge_type = 'Products'
-		//Resulting amount from (sales_tax_rate % 100) X (base_amount + ubi_amount + idc_amount), .00 required
+		//Resulting amount from (sales_tax_rate % 100) X (base_amount + idc_amount), .00 required
 		sales_tax_amount: '20.86',
 		//bool
 		//Optional,'true' lookup to org api for_profit value
